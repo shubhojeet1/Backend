@@ -7,8 +7,8 @@ const GS = GoogleStrategy.Strategy;
 passport.use(
   new GS(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID: "398838372008-06qhd4ncq74am5vf5fnvtreo9av229sv.apps.googleusercontent.com",
+      clientSecret: "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",
       callbackURL: "http://localhost:8080/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, cb) {
