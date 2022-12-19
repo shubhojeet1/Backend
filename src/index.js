@@ -39,7 +39,7 @@ app.get(
       if (!oldUser) {
         req.user.password = "123456";
 
-        const { data } = await axios("http://localhost:8080/api/v1/register", {
+        const { data } = await axios("/api/v1/register", {
           method: "post",
           data: {
             ...req.user,
@@ -48,7 +48,7 @@ app.get(
 
         //if (data.message === "User Already Register")
         {
-          const { data } = await axios("http://localhost:8080/api/v1/login", {
+          const { data } = await axios("/api/v1/login", {
             method: "post",
             data: {
               ...req.user,
@@ -60,7 +60,7 @@ app.get(
           });
         }
       } else {
-        const { data } = await axios("http://localhost:8080/api/v1/login", {
+        const { data } = await axios("/api/v1/login", {
           method: "post",
           data: {
             ...req.user,
@@ -68,7 +68,7 @@ app.get(
           },
         });
         
-       return res.redirect("http://localhost:3000/women");
+       return res.redirect("/women");
 
         // return res.status(200).send({
         //   ...data,
